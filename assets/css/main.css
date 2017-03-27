@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
+
+
+/*!
+ * Global
+ */
+a, a:focus, a:active, a:hover, object, embed {
+	outline: none; text-decoration: none;
+}
+:-moz-any-link:focus {
+	outline: none;
+}
+input::-moz-focus-inner {
+	border: 0;
+}
+:focus {
+	outline: 0;
+}
+html, body{
+	min-height: 100%;
+}
+body{
+	background: #F0F4F4;
+	color: #000000;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+.espacio5{ padding: 2.5px 0; clear: both;}
+.espacio10{ padding: 5px 0; clear: both;}
+.espacio20{ padding: 10px 0; clear: both;}
+.espacio40{ padding: 20px 0; clear: both;}
+.espacio100{ padding: 50px 0; clear: both;}
+.clear{
+	clear: both;
+}
+.img-full{
+	width: 100%;
+}
+.img-max-full{
+	max-width: 100%;
+}
+.margin-bottom-0{
+	margin-bottom: 0;
+}
+.padding-left-0{
+	padding-left: 0;
+}
+.padding-right-0{
+	padding-right: 0;
+}
+.padding-left-35{
+	padding-left: 35px;
+}
+.padding-right-35{
+	padding-right: 35px;
+}
+.font-12{
+	font-size: 12px;
+}
+a,
+a:focus{
+	color: #007db3;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+a:hover{
+	color: #333;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+
+
+
+/*!
+ * Header
+ */
+header .pre-header{
+	background: #FFF;
+	color: #10618A;
+	padding: 4px 0;
+}
+header .pre-header a{
+	color: #007db3;
+	font-size: 12px;
+	font-weight: 500;
+}
+header .header{
+	background: #10628A;
+	padding: 10px 0;
+}
+header .header nav ul,
+header .header nav ul li{
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+header .header nav ul li{
+	display: inline-block;
+}
+header .header nav ul li a{
+	color: #FFF;
+	display: inline-block;
+	font-family: 'Roboto Slab', serif;
+	font-size: 14px;
+	padding: 5px 15px;
+}
+header .header nav ul li a:hover{
+	color: #A9CC38;
+}
+header .header nav ul li.link-verde a{
+	color: #A9CC38;
+}
+header .header .buscador input{
+	background: #00446A url(../img/buscador.png) top right no-repeat;
+	border:1px solid #256F94;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	color: #FFF;
+	font-size: 12px;
+	padding: 5px 15px;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/*!
+ * Banner Home
+ */
+#banner-home{
+	
+}
+#banner-home .item{
+	background: url(../img/bg-banner-home.png);
+	height: 440px;
+}
+
+
+
+/*!
+ * Breadcrumb
+ */
+
+.pasos .pasos-navegacion{
+	font-family: 'Roboto Slab', serif;
+}
+.pasos .pasos-navegacion ul{
+	margin:20px 0 0 0;
+	padding:0;
+}
+.pasos .pasos-navegacion li{
+	background:rgba(16,98,138,0.4);
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    color:#FFF;
+	display:inline-block;
+	font-size:15px;
+	font-weight: 300;
+	margin-right:10px;
+	padding:1px 10px 1px 10px;
+	position:relative;
+}
+.pasos .pasos-navegacion li	span{
+	color:#A9CD38;
+	font-family: 'Roboto', sans-serif;
+	font-size:18px;
+	font-weight:300;
+}
+.pasos .pasos-navegacion li	.compra-pasos{
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:600;
+}											
+.pasos .pasos-navegacion li.active:last-child{
+	margin-right:0;
+	padding-right:10px;
+}
+.pasos .pasos-navegacion li.active{
+	background:rgba(16,98,138,1);
+	color:#ffffff;
+}
+.pasos .pasos-navegacion .flecha{
+	left:-21px;
+	position:absolute;
+	top:8px;
+}
+.pasos .titulo{
+	color: #10628A;
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	font-weight: 400;
+}
+.pasos .descripcion{
+	color:#666666;
+	display: inline-block;
+	font-size: 14px;
+	width: 50%;
+}
+
+
+
+
+
+
+
+/*!
+ * Rubros
+ */
+.rubros .item{
+	padding: 0 7.5px;
+	position: relative;
+}
+.rubros .item > div{
+	background-repeat: no-repeat;
+	background-position: top right;
+	height: 270px;
+	margin-bottom: 15px;
+	text-align: center;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+	width: 100%;
+}
+.rubros .item > div:hover{
+	-webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px 3px rgba(0,0,0,0.5);
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+.rubros .item > div p{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.rubros .item > div p a{
+	color: #ffffff;
+	display: inline-block;
+	font-size: 32px;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.rubros .item.big > div p a span{
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 300;
+	width: 50%;
+}
+.rubros .item.big.left > div{
+	text-align: left;
+	padding-left: 35px;
+}
+.rubros .item.big.right > div{
+	text-align: right;
+	padding-right: 35px;
+}
+
+
+
+
+.rubros .item.color-azul div{
+	background-color: #10628A; 
+}
+.rubros .item.color-verde div{
+	background-color: #008A1B; 
+}
+.rubros .item.color-verde-claro div{
+	background-color: #7AB800; 
+}
+.rubros .item.color-celeste div{
+	background-color: #129DC0; 
+}
+.rubros .item.color-blanco div{
+	background-color: #FFFFFF; 
+}
+.rubros .item.color-blanco div p a{
+	color: #10618A; 
+}
+
+
+.rubros .item > div .favorito{
+	bottom: 30px;
+	left: 25px;
+	position: absolute;
+}
+.rubros .item > div ul,
+.rubros .item > div ul li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.rubros .item > div ul{
+	position: absolute;
+	bottom: 30px;
+	right: 25px;
+}
+.rubros .item > div ul li{
+	display: inline-block;
+}
+
+
+
+
+
+
+/*!
+ * Arma tu Plan
+ */
+.arma-tu-plan .item{
+	background:#ffffff;
+	border-left: 1px solid #CDCDCD;
+	border-right: 1px solid #CDCDCD;
+	overflow: hidden;
+	padding: 0 15px 15px 15px;
+	position: relative;
+}
+.arma-tu-plan .item .factibilidad{
+	background: rgba(255,255,255,0.8);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 44px;
+	width:100%;
+	z-index: 999;
+}
+.arma-tu-plan .item .factibilidad .content{
+	background: rgba(255,255,255,0.65);
+	padding: 30px;
+}
+.arma-tu-plan .item .factibilidad .content input{
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border:1px solid #666666;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	padding: 20px 40px;
+	text-align: center;
+	width:80%;
+}
+.arma-tu-plan .item .factibilidad .content .boton{
+	background: #A9CE38;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border:0;
+	color: #FFFFFF;
+	padding: 20px 40px; 
+	text-transform: uppercase;
+	width:auto;
+}
+.arma-tu-plan .item .eliminar{
+	background:#B20000;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 11px;
+	padding: 3px 5px;
+	text-transform: uppercase;
+}
+.arma-tu-plan .item .eliminar:hover{
+	background:rgba(16,98,138,1);
+}
+.arma-tu-plan .item h2{
+	color: #10608A;
+	font-family: 'Roboto Slab', serif;
+	font-size: 14px;
+	margin-top: 0;
+}
+.arma-tu-plan .item p{
+	color: #666666;
+	font-size: 12px;
+	font-weight: 300;
+}
+.arma-tu-plan .item .servicios p{
+	color: #105F8A;
+	font-size: 12px;
+	font-weight: 400;
+}
+.arma-tu-plan .item h1{
+	border-bottom: 1px solid #CDCDCD;
+	border-top: 1px solid #CDCDCD;
+	color: #10608A;
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-top: 0;
+	padding: 10px 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,eeeeee+100 */
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #eeeeee 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #fefefe 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
+.arma-tu-plan .item .text{
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border:1px solid #CCCCCC;
+	width: 100%;
+}
+.arma-tu-plan .item select{
+	width: 100%;
+}
+.arma-tu-plan .item.border-bottom{
+	border-bottom: 1px solid #CDCDCD;
+}
+.arma-tu-plan .item .precio-verde{
+	color: #ACCD00;
+	font-size: 20px;
+	font-weight: 600;
+}
+.arma-tu-plan .item a{
+	color: #10608A;
+	text-decoration: underline;
+}
+
+
+
+
+/*!
+ * Aside
+ */
+aside{
+	background:#ffffff;
+	border:1px solid #CDCDCD;
+	border-top: 0;
+}
+
+aside h2,
+aside .aside-content{
+	margin:0;
+	padding: 10px 15px;
+}
+aside h2{
+	border-bottom: 1px solid #CDCDCD;
+	border-top: 1px solid #CDCDCD;
+	color: #10618A;
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,eeeeee+100 */
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #eeeeee 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #fefefe 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
+aside h2.no-border-bottom{
+	border-bottom: 0;
+}
+aside table{
+	width: 100%;
+	font-size: 12px;
+}
+aside table thead th{
+	color: #666666;
+	line-height: 13px;
+}
+aside table thead th,
+aside table tr td{
+	padding-bottom: 3px;
+	padding-top: 3px; 
+}
+aside table thead th:nth-child(2),
+aside table thead th:nth-child(3),
+aside table tr td:nth-child(2),
+aside table tr td:nth-child(3){
+	text-align: right;
+}
+aside table tr td:nth-child(1){
+	color: #007db3;
+}
+aside table tr td:nth-child(2),
+aside table tr td:nth-child(3){
+	color: #A9CC38;
+}
+aside table tbody tr:last-child{
+	border-top: 1px solid #CDCDCD;
+	font-size: 14px;
+}
+
+aside .finalizar-compra{
+	background:#A9CE38;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 18px;
+	margin: 10px 0;
+	padding: 10px 20px;
+}
+aside .finalizar-compra:hover{
+	background: #10618A;
+}
+
+aside .agregar{
+	background:#A9CE38;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 11px;
+	padding: 3px 5px;
+	text-transform: uppercase;
+}
+aside .agregar:hover{
+	background:rgba(16,98,138,1);
+}
+aside h3{
+	color: #10618A;
+	font-family: 'Roboto Slab', serif;
+	font-size: 14px;
+	margin-top: 0;
+}
+aside p{
+	color: #666666;
+	font-size: 12px;
+}
+
+
+
+/*!
+ * Footer
+ */
+footer{
+	background-color: #EEEEEE;
+	border-top:15px solid #DDDDDD;
+	padding: 30px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*!
+ * Responsive
+ */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	#banner-home .item{
+		height: 360px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.container{
+		width:100%;
+	}
+	#banner-home .item{
+		height: 340px;
+	}
+	header .header nav ul li a{
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+}
+@media only screen and (max-width : 880px) {
+	#banner-home .item{
+		height: 300px;
+	}
+}
+@media only screen and (max-width : 800px) {
+	#banner-home .item{
+		height: 290px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	#banner-home .item{
+		height: 380px;
+	}
+	.pasos .descripcion{
+		width: 80%;
+	}
+}
+@media only screen and (max-width : 670px) {
+	#banner-home .item{
+		height: 330px;
+	}
+}
+@media only screen and (max-width : 600px) {
+	#banner-home .item{
+		height: 300px;
+	}
+}
+@media only screen and (max-width : 550px) {
+	#banner-home .item{
+		height: 270px;
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	#banner-home .item{
+		height: 230px;
+	}
+	.pasos .descripcion{
+		width: 100%;
+	}
+	footer .text-right{
+		text-align: center;
+	}
+	.rubros .item.big > div p a span{
+		font-size: 14px;
+		width: 80%;
+	}
+}
+@media only screen and (max-width : 425px) {
+	#banner-home .item{
+		height: 200px;
+	}
+}
+@media only screen and (max-width : 380px) {
+	#banner-home .item{
+		height: 180px;
+	}
+}
+@media only screen and (max-width : 359px) {
+	#banner-home .item{
+		height: 160px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+        
+}
