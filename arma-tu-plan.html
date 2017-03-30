@@ -162,8 +162,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                             <h1>
                                 <img src="demo/icon-cloud-inv.png" alt=""> 
                                 Cloud 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
+                                <span class="precio">subtotal: <b class="cloud-cloud-precio"></b></span>
+                                <span class="video"><a href="javascript:void(0)" class="ver-video"><img src="assets/img/video.png" class="img-max-full" alt="Video"></a></span>
+                                <input type="hidden" name="precioCloud" class="precioCloud" value="">
                             </h1>
 
                             <div class="row">
@@ -186,7 +187,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                                             <div class="row text-center">
                                                 <div class="col-xs-6">
-                                                    <input type="radio" name="cloud" checked><br>
+                                                    <input type="radio" name="cloud" class="cloud-cloud" value="30000" checked><br>
                                                     <img src="demo/aws.jpg" class="img-max-full" alt="">
                                                 </div>
                                                 <!--<div class="col-xs-6">
@@ -212,26 +213,26 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                             <div class="row text-center">
                                                 <div class="col-xs-4">
                                                     <p>Almacenamiento</p>
-                                                    <select>
-                                                        <option>5GB</option>
-                                                        <option>10GB</option>
-                                                        <option>15GB</option>
+                                                    <select class="cloud-almacenamiento">
+                                                        <option value="4900">5GB</option>
+                                                        <option value="7900">10GB</option>
+                                                        <option value="9900">15GB</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <p>RAM</p>
-                                                    <select>
-                                                        <option>2GB</option>
-                                                        <option>4GB</option>
-                                                        <option>8GB</option>
+                                                    <select class="cloud-ram">
+                                                        <option value="3900">2GB</option>
+                                                        <option value="6900">4GB</option>
+                                                        <option value="9900">8GB</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <p>Procesador</p>
-                                                    <select>
-                                                        <option>2 Core</option>
-                                                        <option>4 Core</option>
-                                                        <option>8 Core</option>
+                                                    <select class="cloud-procesador">
+                                                        <option value="2900">2 Core</option>
+                                                        <option value="4900">4 Core</option>
+                                                        <option value="6900">8 Core</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -277,8 +278,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                             <h1>
                                 <img src="demo/icon-internet-inv.png" alt=""> 
                                 Internet Empresa 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
+                                <span class="precio">subtotal: <b class="internet-precio">$ 0</b></span>
+                                <span class="video"><a href="javascript:void(0)" class="ver-video"><img src="assets/img/video.png" class="img-max-full" alt="Video"></a></span>
+                                <input type="hidden" name="precioInternet" class="precioInternet" value="0">
                             </h1>
 
                             <div class="row">
@@ -300,7 +302,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet" checked>
+                                    <input type="radio" name="internet" value="13990">
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
@@ -330,7 +332,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet">
+                                    <input type="radio" name="internet" value="19990" >
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
@@ -360,7 +362,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet">
+                                    <input type="radio" name="internet" value="30900" >
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
@@ -380,8 +382,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                             <h1>
                                 <img src="demo/icon-movil-inv.png" alt=""> 
                                 Telefonía Móvil 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
+                                <span class="precio">subtotal: <b class="movil-precio">$ 0</b></span>
+                                <span class="video"><a href="javascript:void(0)" class="ver-video"><img src="assets/img/video.png" class="img-max-full" alt="Video"></a></span>
+                                <input type="hidden" name="precioMovil" class="precioMovil" value="0">
                             </h1>
 
                             <div class="row">
@@ -402,7 +405,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil" checked>
+                                    <input type="radio" name="movil" value="13990" checked>
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
@@ -431,12 +434,12 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil" >
+                                    <input type="radio" name="movil" value="21990" >
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
                                     <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
+                                    <p class="precio-verde">$21.990/mes</p>
                                 </div>
                             </div>
 
@@ -460,12 +463,12 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <div class="espacio10 visible-xs"></div>
                                 <div class="col-xs-3 col-sm-2">
                                     <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil">
+                                    <input type="radio" name="movil" value="33990">
                                 </div>
                                 <div class="col-xs-9 col-sm-4">
                                     <div class="espacio40 hidden-xs"></div>
                                     <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
+                                    <p class="precio-verde">$33.990/mes</p>
                                 </div>
                             </div>
 
@@ -495,29 +498,29 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     <tbody>
                                         <tr>
                                             <td>Cloud</td>
-                                            <td>$ 19.990</td>
-                                            <td>$ 199.900</td>
+                                            <td class="cloud-1">$ 19.990</td>
+                                            <td class="cloud-10">$ 199.900</td>
                                         </tr>
                                         <tr>
                                             <td>Internet Empresa</td>
-                                            <td>$ 39.990</td>
-                                            <td>$ 399.900</td>
+                                            <td class="internet-1">$ 39.990</td>
+                                            <td class="internet-10">$ 399.900</td>
                                         </tr>
                                         <tr>
                                             <td>Telefonía Móvil</td>
-                                            <td>$ 19.990</td>
-                                            <td>$ 199.900</td>
+                                            <td class="movil-1">$ 19.990</td>
+                                            <td class="movil-10">$ 199.900</td>
                                         </tr>
                                         <tr>
                                             <td><b>Total a pagar</b></td>
-                                            <td><b>$ 79.970</b></td>
-                                            <td><b>$ 799.700</b></td>
+                                            <td class="total1"><b>$ 79.970</b></td>
+                                            <td class="total10"><b>$ 799.700</b></td>
                                         </tr>
                                     </tbody>
                                 </table>
 
                                 <div class="text-center">
-                                    <a href="finalizar-compra.php" class="finalizar-compra">FINALIZAR COMPRA</a>
+                                    <a href="finalizar-compra.php?val=799700" class="finalizar-compra">FINALIZAR COMPRA</a>
                                 </div>
 
                             </div>
@@ -603,6 +606,19 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             </div>
         </footer>
 
+
+
+
+
+        <div class="modal-video">
+            <div class="modal-video-content">
+                <a href="javascript:void(0)" class="cerrar-video">Cerrar Video</a>
+                <div id="video" class="embed-responsive embed-responsive-16by9">
+
+                </div>
+                
+            </div>
+        </div>
 
         
 

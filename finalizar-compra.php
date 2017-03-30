@@ -134,16 +134,41 @@
                 <nav class="pasos-navegacion">
                     <ul class="hidden-xs">
                         <li><span>01</span> Selecciona tu rubro</li>
-                        <li class="active"><span>02</span> Arma tu plan <img src="assets/img/flecha.png" alt="" class="flecha"></li>
-                        <li><span>03</span> Verifica <img src="assets/img/flecha.png" alt="" class="flecha"></li>
-                        <li><span>04</span> Finalizar <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                        <li><span>02</span> Arma tu plan <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                        <?php
+                        if (isset($_GET["action"]) and $_GET["action"] == "end") {
+                            ?>
+                            <li><span>03</span> Verifica <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <li class="active"><span>04</span> Finalizar <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <li class="active"><span>03</span> Verifica <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <li><span>04</span> Finalizar <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <?php
+                        }
+                        ?>
                     </ul>
 
                     <ul class="visible-xs">
                         <li><span>01</span></li>
-                        <li class="active"><span>02</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
-                        <li><span>03</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
-                        <li><span>04</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                        <li><span>02</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                        <?php
+                        if (isset($_GET["action"]) and $_GET["action"] == "end") {
+                            ?>
+                            <li><span>03</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <li class="active"><span>04</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <li class="active"><span>03</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <li><span>04</span> <img src="assets/img/flecha.png" alt="" class="flecha"></li>
+                            <?php
+                        }
+                        ?>
+                        
                     </ul>
                 </nav>
 
@@ -157,7 +182,7 @@
                 <div class="row">
                     
                     <div class="col-xs-12">
-                        <h1>Ejemplos Webpay - Transaccion Normal</h1>
+                        <h1>Pago a través de WebPay Plus</h1>
 
                         <?php
                         require_once( 'webpay/libwebpay/webpay.php' );
@@ -187,7 +212,11 @@
                                 $tx_step = "Init";
 
                                 /** Monto de la transacción */
-                                $amount = 9990;
+                                if (isset($_GET["val"])) {
+                                    $amount = $_GET["val"];
+                                }
+                                else
+                                    $amount = 799700;
 
                                 /** Orden de compra de la tienda */
                                 $buyOrder = rand();
@@ -221,7 +250,7 @@
                                     $message = "webpay no disponible";
                                 }
 
-                                $button_name = "Continuar &raquo;";
+                                $button_name = "Iniciar Pago &raquo;";
                                 
                                 break;
 
@@ -321,7 +350,7 @@
                                 break;
                         }
 
-                        echo "<h2>Step: " . $tx_step . "</h2>";
+                        echo "<h2>Paso Webpay: " . $tx_step . "</h2>";
 
                         if (!isset($request) || !isset($result) || !isset($message) || !isset($next_page)) {
 
@@ -334,14 +363,14 @@
                         /* Respuesta de Salida - Vista WEB */
                         ?>
 
-                        <div style="background-color:lightyellow;">
+                        <!--<div style="background-color:lightyellow;">
                             <h3>request</h3>
                             <?php  var_dump($request); ?>
                         </div>
                         <div style="background-color:lightgrey;">
                             <h3>result</h3>
                             <?php  var_dump($result); ?>
-                        </div>
+                        </div>-->
                         <p><samp><?php  echo $message; ?></samp></p>
 
                         <?php if (strlen($next_page) && $post_array) { ?>
@@ -350,7 +379,7 @@
                                     <input type="hidden" name="authorizationCode" id="authorizationCode" value="">
                                     <input type="hidden" name="amount" id="amount" value="">
                                     <input type="hidden" name="buyOrder" id="buyOrder" value="">
-                                    <input type="submit" value="<?php echo $button_name; ?>">
+                                    <input type="submit" class="boton-webpay" value="<?php echo $button_name; ?>">
                                 </form>
 
                                 <script>
@@ -372,427 +401,14 @@
                             <form action="<?php echo $next_page; ?>" method="post">
                             
                             <input type="hidden" name="token_ws" value="<?php echo ($token); ?>">
-                            <input type="submit" value="<?php echo $button_name; ?>">
+                            <input type="submit" class="boton-webpay" value="<?php echo $button_name; ?>">
                         </form>
                         <?php } ?>
 
-                        <br>
-                        <a href=".">&laquo; volver a index</a>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-8 arma-tu-plan">
-                        <div class="item">
-                            <h1>
-                                <img src="demo/icon-cloud-inv.png" alt=""> 
-                                Cloud 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
-                            </h1>
-
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6">
-                                    <div class="row">
-                                        <div class="col-xs-4 col-sm-3 text-center">
-                                            <img src="demo/prestashop.jpg" alt="" class="img-max-full">
-                                            <a href="javascript:void()" class="eliminar">Eliminar</a>
-                                        </div>
-                                        <div class="col-xs-8 col-sm-9">
-                                            <h2>Ecommerce PrestaShop</h2>
-                                            <p>Suspendisse hendrerit velit sollicitudin mauris ullamcorper, nec facilisis lorem gravida. Vestibulum ante ipsum primis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 servicios">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <p>En qué plataforma desea alojar?</p>
-
-                                            <div class="row text-center">
-                                                <div class="col-xs-6">
-                                                    <input type="radio" name="cloud" checked><br>
-                                                    <img src="demo/aws.jpg" class="img-max-full" alt="">
-                                                </div>
-                                                <!--<div class="col-xs-6">
-                                                    <input type="radio" name="cloud"><br>
-                                                    <img src="demo/azure.jpg" class="img-max-full" alt="">
-                                                </div>-->
-                                            </div>
-                                        </div>
-
-                                        <div class="espacio40"></div>
-
-                                        <div class="col-xs-12">
-                                            <p>Dominio</p>
-                                            <input type="text" class="text" name="">
-                                        </div>
-
-                                        <div class="espacio40"></div>
-
-                                        <div class="col-xs-12">
-                                            <a href="javascript:void(0)" class="font-12 open-avanzada">Configuración Avanzada</a>
-                                        </div>
-                                        <div class="col-xs-12 avanzada" style="display: none;">
-                                            <div class="row text-center">
-                                                <div class="col-xs-4">
-                                                    <p>Almacenamiento</p>
-                                                    <select>
-                                                        <option>5GB</option>
-                                                        <option>10GB</option>
-                                                        <option>15GB</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <p>RAM</p>
-                                                    <select>
-                                                        <option>2GB</option>
-                                                        <option>4GB</option>
-                                                        <option>8GB</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <p>Procesador</p>
-                                                    <select>
-                                                        <option>2 Core</option>
-                                                        <option>4 Core</option>
-                                                        <option>8 Core</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-xs-12">
-                                            
-                                        </div>
-                                        <div class="col-xs-12">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="item">
-                            <div class="factibilidad">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center content">
-                                        <form>
-                                            <div class="espacio40"></div>
-                                            <h4>Verifica Factibilidad Técnica</h4>
-                                            <p>Por favor ingresa tu dirección para verificar la factivilidad de entregarte el servicio.</p>
-                                            <input type="text" name="" placeholder="Ingrese dirección">
-                                            <input type="submit" name="comprobar" class="boton comprobar-factibilidad">
-                                            <br>
-                                            <div class="comprobando" style="display: none;">
-                                                <img src="assets/img/loader.gif" alt="Cargando">
-                                                <h4>Comprobando, espere unos segundos...</h4>
-                                            </div>
-
-                                            <div class="comprobado" style="display: none;">
-                                                <h4 style="color: #A9CE38; font-size: 36px;">Exelentes Noticias!!, tenemos factibilidad para usted.</h4>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <h1>
-                                <img src="demo/icon-internet-inv.png" alt=""> 
-                                Internet Empresa 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
-                            </h1>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/internet-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan S</h2>
-                                    <p>
-                                        Banda Ancha Fija<br>
-                                        Hasta 8 Mbps<br><br>
-
-                                        Mi Negocio en Línea<br>
-                                        Sitio web<br><br>
-
-                                        Gratis por un año* <a href="">Conoce más</a>
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet" checked>
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
-                                </div>
-                            </div>
-
-                            <div class="espacio40 visible-xs"></div>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/internet-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan M </h2>
-                                    <p>
-                                        Banda Ancha Fija<br>
-                                        Hasta 50 Mbps<br><br>
-
-                                        Mi Negocio en Línea<br>
-                                        Sitio web<br><br>
-
-                                        Gratis por un año* <a href="">Conoce más</a>
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$19.990/mes</p>
-                                </div>
-                            </div>
-
-                            <div class="espacio40 visible-xs"></div>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/internet-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan L </h2>
-                                    <p>
-                                        Banda Ancha Fija<br>
-                                        Hasta 200 Mbps<br><br>
-
-                                        Mi Negocio en Línea<br>
-                                        Sitio web<br><br>
-
-                                        Gratis por un año* <a href="">Conoce más</a>
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="internet">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$30.900/mes</p>
-                                </div>
-                            </div>
-
-
-
-
-
-                        </div>
-
-
-                        <div class="item">
-                            <h1>
-                                <img src="demo/icon-movil-inv.png" alt=""> 
-                                Telefonía Móvil 
-                                <span class=""></span>
-                                <input type="hidden" name="precio[]">
-                            </h1>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/movil-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan Multimedia S </h2>
-                                    <p>
-                                        Capacidad de navegación<br>
-                                        2 GB<br><br>
-                                        + Redes sociales y APPs<br>
-                                        500 Megas<br><br>
-                                        Habla<br>
-                                        350 minutos 
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil" checked>
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
-                                </div>
-                            </div>
-
-                            <div class="espacio40 visible-xs"></div>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/movil-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan Multimedia M </h2>
-                                    <p>
-                                        Capacidad de navegación<br>
-                                        2 GB DOBLE DE GB<br><br>
-                                        + Redes sociales y APPs<br>
-                                        2 GB DOBLE DE GB<br><br>
-                                        Habla<br>
-                                        700 minutos 
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil" >
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
-                                </div>
-                            </div>
-
-                            <div class="espacio40 visible-xs"></div>
-
-                            <div class="row">
-                                <div class="col-xs-3 col-sm-2">
-                                    <img src="demo/movil-big.jpg" alt="" class="img-max-full">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <h2>Plan Multimedia L </h2>
-                                    <p>
-                                        Capacidad de navegación<br>
-                                        10 GB DOBLE DE GB<br><br>
-                                        + Redes sociales y APPs<br>
-                                        6 GB DOBLE DE GB<br><br>
-                                        Habla<br>
-                                        minutos ilimitados
-                                    </p>
-                                </div>
-                                <div class="espacio10 visible-xs"></div>
-                                <div class="col-xs-3 col-sm-2">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <input type="radio" name="movil">
-                                </div>
-                                <div class="col-xs-9 col-sm-4">
-                                    <div class="espacio40 hidden-xs"></div>
-                                    <p class="margin-bottom-0">Contrata por</p>
-                                    <p class="precio-verde">$13.990/mes</p>
-                                </div>
-                            </div>
-
-                            
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="col-xs-12 col-sm-4">
                         
-                        <aside>
-                            <h2><img src="demo/icon-carro.png" alt=""> Carro de Compras</h2>
-                            <div class="aside-content">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>SERVICIO</th>
-                                            <th>MENSUAL</th>
-                                            <th>ANUAL<br><small>(2 meses gratis)</small></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Cloud</td>
-                                            <td>$ 19.990</td>
-                                            <td>$ 199.900</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Internet Empresa</td>
-                                            <td>$ 39.990</td>
-                                            <td>$ 399.900</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telefonía Móvil</td>
-                                            <td>$ 19.990</td>
-                                            <td>$ 199.900</td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Total a pagar</b></td>
-                                            <td><b>$ 79.970</b></td>
-                                            <td><b>$ 799.700</b></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <div class="text-center">
-                                    <a href="finalizar-compra.php" class="finalizar-compra">FINALIZAR COMPRA</a>
-                                </div>
-
-                            </div>
-
-                            <h2><img src="demo/icon-cloud-inv.png" alt=""> Cloud</h2>
-                            <div class="aside-content listado-productos">
-
-                                <div class="row producto">
-                                    <div class="col-xs-5 col-sm-4 text-center">
-                                        <img src="demo/logo-prestashop.png" alt="" class="img-max-full"><br>
-                                        <a href="javascript:void()" class="agregar">Agregar</a>
-                                    </div>
-                                    <div class="col-xs-7 col-sm-8">
-                                        <h3>Ecommerce PrestaShop</h3>
-                                        <p>Suspendisse hendrerit velit sollicitudin mauris ullamcorper, nec facilisis lorem gravida. Vestibulum ante ipsum primis.</p>
-                                    </div>
-                                </div>
-
-                                <div class="row producto">
-                                    <div class="col-xs-5 col-sm-4 text-center">
-                                        <img src="demo/logo-g-suite.png" alt="" class="img-max-full"><br>
-                                        <a href="javascript:void()" class="agregar">Agregar</a>
-                                    </div>
-                                    <div class="col-xs-7 col-sm-8">
-                                        <h3>G Suite</h3>
-                                        <p>Suspendisse hendrerit velit sollicitudin mauris ullamcorper, nec facilisis lorem gravida. Vestibulum ante ipsum primis.</p>
-                                    </div>
-                                </div>
-
-                                <div class="row producto">
-                                    <div class="col-xs-5 col-sm-4 text-center">
-                                        <img src="demo/logo-backup.png" alt="" class="img-max-full"><br>
-                                        <a href="javascript:void()" class="agregar">Agregar</a>
-                                    </div>
-                                    <div class="col-xs-7 col-sm-8">
-                                        <h3>Respaldo</h3>
-                                        <p>Suspendisse hendrerit velit sollicitudin mauris ullamcorper, nec facilisis lorem gravida. Vestibulum ante ipsum primis.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <h2 class="no-border-bottom"><img src="demo/icon-internet-inv.png" alt=""> Internet</h2>
-                            <h2 class="no-border-bottom"><img src="demo/icon-fijo-inv.png" alt=""> Telefonía Fija</h2>
-                            <h2 class="no-border-bottom"><img src="demo/icon-movil-inv.png" alt=""> Telefonía Móvil</h2>
-                            <h2 class="no-border-bottom"><img src="demo/icon-msg-inv.png" alt=""> Correo Móvil</h2>
-                            <h2 class="no-border-bottom"><img src="demo/icon-seguridad-inv.png" alt=""> Seguridad</h2>
-                            
-
-                        </aside>
-
                     </div>
+
+                    
 
 
                 </div>

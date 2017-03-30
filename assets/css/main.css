@@ -411,7 +411,26 @@ header .header .buscador input{
 	background: -webkit-linear-gradient(top,  #fefefe 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #fefefe 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+	position: relative;
 }
+.arma-tu-plan .item h1 .precio{
+	color: #A9CE38;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	right: 70px;
+	position: absolute;
+	top: 9px;
+}
+.arma-tu-plan .item h1 .precio b{
+	font-weight: bold;
+}
+.arma-tu-plan .item h1 .video{
+	right: 15px;
+	position: absolute;
+	top: 7px;
+}
+
+
 .arma-tu-plan .item .text{
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
@@ -432,6 +451,33 @@ header .header .buscador input{
 .arma-tu-plan .item a{
 	color: #10608A;
 	text-decoration: underline;
+}
+
+
+
+.modal-video{
+	background: rgba(255,255,255,0.9);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+.modal-video-content{
+	background: #FFFFFF;
+	-webkit-box-shadow: 0 0 15px 10px rgba(0,0,0,0.2);
+	box-shadow: 0 0 15px 10px rgba(0,0,0,0.2);
+	margin:5% auto 0 auto;
+	position: relative;
+	width: 600px;
+}
+.cerrar-video{
+	text-transform: uppercase;
+	position: absolute;
+	right: 0px;
+	top: -30px;
 }
 
 
@@ -498,8 +544,10 @@ aside table tbody tr:last-child{
 	font-size: 14px;
 }
 
-aside .finalizar-compra{
+aside .finalizar-compra,
+.boton-webpay{
 	background:#A9CE38;
+	border:0;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	color: #ffffff;
@@ -508,7 +556,8 @@ aside .finalizar-compra{
 	margin: 10px 0;
 	padding: 10px 20px;
 }
-aside .finalizar-compra:hover{
+aside .finalizar-compra:hover,
+.boton-webpay:hover{
 	background: #10618A;
 }
 
@@ -602,6 +651,9 @@ footer{
 	#banner-home .item{
 		height: 330px;
 	}
+	.modal-video-content{
+		width: 90%;
+	}
 }
 @media only screen and (max-width : 600px) {
 	#banner-home .item{
@@ -629,6 +681,9 @@ footer{
 		font-size: 14px;
 		width: 80%;
 	}
+	.modal-video-content{
+		margin:10% auto 0 auto;
+	}
 }
 @media only screen and (max-width : 425px) {
 	#banner-home .item{
@@ -638,6 +693,9 @@ footer{
 @media only screen and (max-width : 380px) {
 	#banner-home .item{
 		height: 180px;
+	}
+	.modal-video-content{
+		margin:15% auto 0 auto;
 	}
 }
 @media only screen and (max-width : 359px) {
